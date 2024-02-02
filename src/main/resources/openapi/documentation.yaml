@@ -1,0 +1,11 @@
+openapi: "3.0.3"
+info:
+  title: "music_app_backend API"
+  description: "music_app_backend API"
+  version: "1.0.0"
+servers:
+- url: "https://music_app_backend"
+paths:
+  /:
+    get:
+      description: ""
