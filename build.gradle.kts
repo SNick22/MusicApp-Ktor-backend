@@ -4,6 +4,8 @@ val logback_version: String by project
 val commons_codec_version: String by project
 val exposed_version: String by project
 val postgresql_version: String by project
+val koin_version: String by project
+val firebase_version: String by project
 
 plugins {
     kotlin("jvm") version "1.9.22"
@@ -42,6 +44,19 @@ dependencies {
 
     implementation("org.postgresql:postgresql:$postgresql_version")
 
+    implementation("io.insert-koin:koin-core:$koin_version")
+    implementation("io.insert-koin:koin-ktor:$koin_version")
+    implementation("io.insert-koin:koin-logger-slf4j:$koin_version")
+
+    implementation("com.google.firebase:firebase-admin:$firebase_version") {
+        modules {
+            module("com.google.guava:listenablefuture") {
+                replacedBy("com.google.guava:guava", "listenablefuture is part of guava")
+            }
+        }
+    }
+
     testImplementation("io.ktor:ktor-server-tests-jvm")
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit:$kotlin_version")
+    testImplementation("io.ktor:ktor-server-test-host-jvm:2.3.7")
 }
