@@ -10,4 +10,6 @@ class UsersController {
         val userModel = Users.fetchUserByPhoneNumber(phoneNumber)
         return userModel != null
     }
+
+    fun getUser(phoneNumber: String): UserDTO? = Users.fetchUserByPhoneNumber(phoneNumber)
 }

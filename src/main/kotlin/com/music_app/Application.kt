@@ -24,5 +24,5 @@ fun Application.module() {
     configureKoin()
     configureSerialization()
     configureSecurity(tokenConfig)
-    configureRouting()
+    configureRouting(tokenConfig)
 }
