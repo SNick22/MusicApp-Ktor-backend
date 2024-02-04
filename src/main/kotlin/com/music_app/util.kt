@@ -14,7 +14,7 @@ fun String.isValidPhone(): Boolean {
 }
 
 fun String.isValidPassword(): Boolean {
-    return this.length > 8
+    return this.length >= 8
 }
 
 fun String.isValidCode(): Boolean {

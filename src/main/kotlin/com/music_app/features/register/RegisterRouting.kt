@@ -33,7 +33,7 @@ fun Routing.configureRegisterRouting() {
         }
 
         if (!request.password.isValidPassword()) {
-            call.respond(HttpStatusCode.BadRequest, "Password length must be > 8")
+            call.respond(HttpStatusCode.BadRequest, "Password length must be >= 8")
             return@post
         }
 
