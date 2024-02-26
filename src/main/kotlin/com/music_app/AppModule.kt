@@ -1,5 +1,6 @@
 package com.music_app
 
+import com.music_app.database.music.MusicController
 import com.music_app.database.users.UsersController
 import com.music_app.security.hashing.HashingService
 import com.music_app.security.hashing.SHA256HashingService
@@ -11,4 +12,5 @@ val appModule = module {
     factory<HashingService> { SHA256HashingService() }
     factory<TokenService> { JwtTokenService() }
     factory { UsersController() }
+    factory { MusicController() }
 }

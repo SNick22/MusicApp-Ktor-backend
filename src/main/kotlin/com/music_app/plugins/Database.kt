@@ -1,5 +1,6 @@
 package com.music_app.plugins
 
+import com.music_app.database.music.Musics
 import com.music_app.database.users.Users
 import io.ktor.server.application.*
 import org.jetbrains.exposed.sql.Database
@@ -15,6 +16,6 @@ fun Application.configureDatabase() {
     )
 
     transaction(database) {
-        SchemaUtils.create(Users)
+        SchemaUtils.create(Users, Musics)
     }
 }
